@@ -16,7 +16,7 @@ export default function Navbar() {
     const exploreItems = [
         { name: "Sectors", href: "/marketplace", icon: LayoutPanelLeft },
         { name: "Suppliers", href: "/suppliers", icon: Handshake },
-        { name: "Invest", href: "/invest", icon: Handshake, comingSoon: true },
+        { name: "Invest", href: "/invest", icon: Handshake },
         { name: "Port of NEOM", href: "/port", icon: Anchor },
         { name: "NEOM Bay Airport", href: "/airport", icon: Plane },
     ];
