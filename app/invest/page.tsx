@@ -5,7 +5,7 @@ import { Building2, ShieldCheck, Handshake, Landmark } from "lucide-react";
 
 export default function InvestLandingPage() {
   return (
-    <div className="bg-black text-white min-h-screen pt-20">
+    <div className="bg-black text-white min-h-screen">
       <section className="relative overflow-hidden bg-black">
         <div className="absolute inset-0">
           <Image
