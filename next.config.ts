@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { resolve } from "path";
 
 const nextConfig: NextConfig = {
   images: {
@@ -8,6 +9,11 @@ const nextConfig: NextConfig = {
         hostname: 'images.unsplash.com',
       },
     ],
+  },
+  experimental: {
+    turbopack: {
+      root: resolve(__dirname, './'),
+    },
   },
 };
 

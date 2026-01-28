@@ -20,53 +20,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
-
-// Mock Data for a single insight
-const insightData = {
-    id: "pub-1",
-    title: "Zero-Gravity Urbanism: The Architecture of THE LINE",
-    subtitle: "How NEOM is redefining urban density and livability through a revolutionary three-dimensional city model.",
-    author: "NEOM Design Authority",
-    role: "Strategic Planning Dept",
-    date: "January 15, 2026",
-    readTime: "15 min read",
-    views: "42,850",
-    category: "Cognitive Cities",
-    type: "Whitepaper / Analysis",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200",
-    content: [
-        {
-            type: "paragraph",
-            text: "THE LINE represents a paradigm shift in how we conceive human settlements. By moving away from the traditional horizontal sprawl and hacia zero-gravity urbanism—the idea of layering city functions vertically—we are creating a city that prioritizes people and nature over cars and roads."
-        },
-        {
-            type: "heading",
-            text: "Neural Integration in Urban Layouts"
-        },
-        {
-            type: "paragraph",
-            text: "NEOM's cognitive network is the heartbeat of THE LINE. By utilizing advanced AI at the design phase, we've optimized every square meter for natural light, ventilation, and social connectivity. Our neural network analyzes millions of occupancy patterns to ensure that every resident is within a 5-minute walk of all essential services."
-        },
-        {
-            type: "image",
-            url: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?auto=format&fit=crop&q=80&w=800",
-            caption: "Digital Twin simulations of vertical airflow within the urban canyons of THE LINE."
-        },
-        {
-            type: "quote",
-            text: "We are not building a city on the land; we are building a city with the land. 95% of NEOM's territory remains untouched, preserved for the wildlife and the natural heritage of the Tabuk region."
-        },
-        {
-            type: "heading",
-            text: "Cognitive Energy Protocols"
-        },
-        {
-            type: "paragraph",
-            text: "Powering a vertical city requires an unprecedented approach to energy distribution. ENOWA's cognitive grid manages a 100% renewable energy mix, primarily sourced from massive wind and solar fields across the desert. The grid doesn't just respond to demand; it predicts it using the neural data of the city itself, ensuring zero waste and peak efficiency."
-        }
-    ],
-    tags: ["THE LINE", "Zero-Gravity", "Urbanism", "Cognitive Cities", "Sustainability"]
-};
+import { insightData } from "@/lib/data/insights";
 
 export default function InsightDetailPage() {
     const params = useParams();
