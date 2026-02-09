@@ -52,7 +52,7 @@ export default function Navbar() {
                                 <button
                                     className={cn(
                                         "flex items-center gap-1 px-4 py-2 text-xs font-black uppercase tracking-[0.2em] transition-all rounded-full hover:bg-white/5",
-                                        pathname.startsWith("/marketplace") ? "text-neom-gold" : "text-white"
+                                        pathname.startsWith("/marketplace") || pathname.startsWith("/port") ? "text-neom-gold" : "text-white"
                                     )}
                                 >
                                     Explore <ChevronDown className={cn("h-3 w-3 transition-transform ml-1", isExploreOpen && "rotate-180")} />
