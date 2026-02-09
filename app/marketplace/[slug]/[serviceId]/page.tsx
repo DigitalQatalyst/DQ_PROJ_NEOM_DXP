@@ -211,7 +211,7 @@ export default function ServiceDetailPage() {
                                         <section>
                                             <h2 className="text-3xl font-black text-neom-black mb-8 tracking-tight uppercase">Key Features</h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                                {serviceDetail.content.overview.benefits.map((benefit, i) => (
+                                                {serviceDetail.content.overview.benefits.map((benefit: string, i: number) => (
                                                     <div key={i} className="flex items-center gap-4 p-6 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm group hover:border-neom-gold transition-colors">
                                                         <CheckCircle2 className="h-6 w-6 text-neom-gold flex-shrink-0" />
                                                         <span className="text-sm font-black text-neom-black uppercase tracking-tight">{benefit}</span>
