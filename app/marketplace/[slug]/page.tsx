@@ -200,7 +200,7 @@ export default function MarketplaceDetailPage() {
                                                 href={`/marketplace/${slug}/${service.id}`}
                                                 className="bg-neom-black text-white px-7 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-neom-gold hover:text-neom-black transition-all flex items-center shadow-lg shadow-black/5"
                                             >
-                                                Access Now
+                                                Instant Access
                                                 <ChevronRight className="ml-2 h-4 w-4" />
                                             </Link>
                                         ) : (

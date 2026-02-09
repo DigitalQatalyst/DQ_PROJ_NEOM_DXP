@@ -23,72 +23,55 @@ import {
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { servicesData } from "@/lib/data/marketplace";
 
-// Mock Detailed Data for Move-in Example
-const serviceDetail = {
-    id: "activate-home",
-    name: "Cognitive Onboarding",
-    category: "Connectivity",
-    shortDesc: "Initialize your living space within THE LINE with instant identity-linked service activation.",
-    status: "Available",
-    popularity: 4.9,
-    reviews: 1240,
-    processingTime: "Instant / Neural Sync",
-    color: "bg-neom-gold",
-    icon: Zap,
-
-    tabs: [
-        { id: "overview", label: "Overview", icon: Info },
-        { id: "requirements", label: "Neural Specs", icon: FileText },
-        { id: "fees", label: "Credits", icon: Wallet },
-        { id: "faqs", label: "Inquiries", icon: HelpCircle },
-    ],
-
-    content: {
-        overview: {
-            summary: "The Cognitive Onboarding service allow residents of THE LINE to activate their living environment's systems immediately. By leveraging NEOM's unified data vault, the process is fully automated based on your unique biometric signature.",
-            benefits: [
-                "Neural sync within milliseconds",
-                "Automated connection via NEOM ID",
-                "Zero physical documentation required",
-                "Monitor ecosystem health via Neural Feed"
-            ],
-            howItWorks: [
-                { step: 1, text: "Verify your Cognitive ID via biometric scan." },
-                { step: 2, text: "Select your living module parameters." },
-                { step: 3, text: "Authorize ecosystem credits allocation." },
-                { step: 4, text: "Initiate full environmental synthesis." }
-            ]
-        },
-        requirements: {
-            documents: [
-                { title: "Cognitive ID", desc: "Active biometric profile in the NEOM data vault." },
-                { title: "Residency Permit", desc: "Digital verification via THE LINE Authority." },
-                { title: "Quantum Signature", desc: "Required for high-security sector access." }
-            ],
-            eligibility: "Any individual with a verified Cognitive ID residing in THE LINE."
-        },
-        fees: {
-            structure: [
-                { label: "Synthesis Deposit (Module)", value: "₪ 2,000", type: "Refundable" },
-                { label: "Neural Link Activation", value: "₪ 100", type: "One-time" },
-                { label: "Ecosystem Integration Fee", value: "₪ 20", type: "Systemic" }
-            ],
-            note: "All credits are handled through the circular economy protocol."
-        },
-        faqs: [
-            { q: "How fast is the synthesis?", a: "Residential systems are usually fully synchronized within 5 minutes of biometric verification." },
-            { q: "Can I activate without a neural link?", a: "Yes, standard biometric authentication is available, though neural sync is prioritized." },
-            { q: "What happens to my data?", a: "All interaction data is locally processed and encrypted via NEOM's private quantum network." }
-        ]
-    }
-};
+// Base tabs for details layout
+const baseTabs = [
+    { id: "overview", label: "Overview", icon: Info },
+    { id: "requirements", label: "Requirements", icon: FileText },
+    { id: "fees", label: "Fees", icon: Wallet },
+    { id: "faqs", label: "FAQs", icon: HelpCircle },
+];
 
 export default function ServiceDetailPage() {
     const params = useParams();
     const { slug, serviceId } = params;
 
     const [activeTab, setActiveTab] = useState("overview");
+
+    // Resolve service from dataset
+    const sector = servicesData[(slug as string) || "future-living"] as any;
+    const svc = sector?.services?.find((s: any) => s.id === serviceId) as any;
+    const serviceDetail = {
+        id: svc?.id || "",
+        name: svc?.name || "Service",
+        category: svc?.subCategory || svc?.category || "",
+        shortDesc: svc?.desc || "",
+        status: svc?.status || "Available",
+        popularity: svc?.popularity || 0,
+        reviews: svc?.reviews || 0,
+        processingTime: svc?.processingTime || "Instant",
+        color: svc?.color || "bg-neom-gold",
+        icon: svc?.icon || Zap,
+        tabs: baseTabs,
+        content: {
+            overview: {
+                summary: svc?.details?.overview || svc?.desc || "",
+                benefits: svc?.details?.features || [],
+                howItWorks: (svc?.details?.howItWorks || []).map((t: string, i: number) => ({ step: i + 1, text: t }))
+            },
+            requirements: {
+                documents: svc?.details?.requirements?.documents || [],
+                eligibility: svc?.details?.requirements?.eligibility || ""
+            },
+            fees: {
+                structure: svc?.details?.fees?.structure || [],
+                note: svc?.details?.fees?.note || ""
+            },
+            faqs: svc?.details?.faqs || []
+        },
+        resources: svc?.details?.resources || []
+    };
 
     return (
         <div className="bg-white min-h-screen text-neom-black pt-20">
@@ -132,7 +115,7 @@ export default function ServiceDetailPage() {
 
                         <div className="flex flex-col sm:flex-row items-center gap-4">
                             <button className="w-full sm:w-auto px-10 py-5 bg-neom-black text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-neom-gold hover:text-neom-black transition-all shadow-2xl shadow-neom-black/10 flex items-center justify-center gap-3">
-                                Initialize Now <ExternalLink className="h-4 w-4" />
+                                Instant Access <ExternalLink className="h-4 w-4" />
                             </button>
                             <button className="w-full sm:w-auto px-10 py-5 border-2 border-zinc-100 text-neom-black rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-zinc-50 transition-all flex items-center justify-center gap-3">
                                 Monitor Process
@@ -221,12 +204,12 @@ export default function ServiceDetailPage() {
                                 {activeTab === "overview" && (
                                     <div className="space-y-12">
                                         <section>
-                                            <h2 className="text-3xl font-black text-neom-black mb-6 tracking-tight uppercase">System Specification</h2>
+                                            <h2 className="text-3xl font-black text-neom-black mb-6 tracking-tight uppercase">Service Overview</h2>
                                             <p className="text-zinc-500 leading-relaxed text-xl">{serviceDetail.content.overview.summary}</p>
                                         </section>
 
                                         <section>
-                                            <h2 className="text-3xl font-black text-neom-black mb-8 tracking-tight uppercase">Key Advantages</h2>
+                                            <h2 className="text-3xl font-black text-neom-black mb-8 tracking-tight uppercase">Key Features</h2>
                                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                                 {serviceDetail.content.overview.benefits.map((benefit, i) => (
                                                     <div key={i} className="flex items-center gap-4 p-6 bg-zinc-50 rounded-2xl border border-zinc-100 shadow-sm group hover:border-neom-gold transition-colors">
@@ -238,7 +221,7 @@ export default function ServiceDetailPage() {
                                         </section>
 
                                         <section className="bg-neom-black rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl">
-                                            <h2 className="text-3xl font-black mb-12 relative z-10 tracking-tight uppercase">Onboarding Sequence</h2>
+                                            <h2 className="text-3xl font-black mb-12 relative z-10 tracking-tight uppercase">How It Works</h2>
                                             <div className="space-y-8 relative z-10">
                                                 {serviceDetail.content.overview.howItWorks.map((step) => (
                                                     <div key={step.step} className="flex gap-6 group">
@@ -250,6 +233,20 @@ export default function ServiceDetailPage() {
                                                 ))}
                                             </div>
                                         </section>
+
+                                        {serviceDetail.resources?.length > 0 && (
+                                            <section>
+                                                <h2 className="text-3xl font-black text-neom-black mb-8 tracking-tight uppercase">Resources</h2>
+                                                <div className="space-y-3">
+                                                    {serviceDetail.resources.map((r: any, i: number) => (
+                                                        <Link key={i} href={r.href} target="_blank" className="flex items-center justify-between p-6 bg-zinc-50 hover:bg-white border border-transparent hover:border-zinc-100 hover:shadow-xl rounded-[2rem] transition-all group">
+                                                            <span className="text-[10px] font-black text-neom-black uppercase tracking-widest">{r.label}</span>
+                                                            <ExternalLink className="h-4 w-4 text-zinc-300 group-hover:text-neom-gold transition-colors" />
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </section>
+                                        )}
                                     </div>
                                 )}
 
@@ -285,7 +282,7 @@ export default function ServiceDetailPage() {
                                 {activeTab === "fees" && (
                                     <div className="space-y-12">
                                         <section>
-                                            <h2 className="text-3xl font-black text-neom-black mb-10 tracking-tight uppercase">Credit Allocation</h2>
+                                            <h2 className="text-3xl font-black text-neom-black mb-10 tracking-tight uppercase">Fees</h2>
                                             <div className="overflow-hidden rounded-[2.5rem] border border-zinc-100 shadow-sm">
                                                 <table className="w-full text-left bg-white">
                                                     <thead>
@@ -296,7 +293,7 @@ export default function ServiceDetailPage() {
                                                         </tr>
                                                     </thead>
                                                     <tbody className="divide-y divide-zinc-50">
-                                                        {serviceDetail.content.fees.structure.map((fee, i) => (
+                                                        {serviceDetail.content.fees.structure.map((fee: any, i: number) => (
                                                             <tr key={i} className="hover:bg-zinc-50/50 transition-colors">
                                                                 <td className="px-10 py-6 text-base text-zinc-500 font-medium">{fee.label}</td>
                                                                 <td className="px-10 py-6 text-base text-neom-black font-black uppercase tracking-tight">{fee.value}</td>

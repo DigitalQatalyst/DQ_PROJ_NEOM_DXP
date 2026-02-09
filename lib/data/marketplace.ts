@@ -13,7 +13,9 @@ import {
     User,
     Handshake,
     GraduationCap,
-    Factory
+    Factory,
+    Battery,
+    Home
 } from "lucide-react";
 
 export const servicesData: Record<string, {
@@ -132,128 +134,281 @@ export const servicesData: Record<string, {
         description: "Comprehensive management of NEOM's sustainable energy and water infrastructure, serving consumers, builders, and partners.",
         categories: ["All", "Consumer Ecosystem", "Builder Ecosystem", "Partners & Talent"],
         services: [
-            // Consumer Ecosystem
+            // Builder Ecosystem
             {
-                id: "move-in-activation",
-                name: "Move-in (Activation)",
-                desc: "Activate electricity and water services for your new home instantly with your Ejari or Title Deed.",
-                category: "Consumer Ecosystem",
-                subCategory: "CONNECTIONS",
-                icon: Zap,
+                id: "renewable-generation",
+                name: "Renewable Energy Generation",
+                desc: "Explore large-scale solar and wind farms, active renewable projects, and strategic partners.",
+                category: "Builder Ecosystem",
+                subCategory: "PRODUCTION",
+                icon: Sun,
                 status: "Available",
                 popularity: 4.9,
                 color: "bg-emerald-500",
-                isPopular: true
+                isPopular: true,
+                details: {
+                    overview: "Harnessing NEOM’s vast renewable resources, our utility-scale solar and wind projects provide clean, 24/7 power to fuel the future of sustainable living.",
+                    features: [
+                        "Utility-scale solar PV and onshore wind",
+                        "Bankable PPAs with strategic partners",
+                        "Grid-synchronized and forecast-optimized"
+                    ],
+                    howItWorks: [
+                        "Browse NEOM’s renewable energy projects",
+                        "Partner with us to optimize your energy solutions",
+                        "Help shape a sustainable future for generations to come"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Company Profile", desc: "Valid corporate identity and portfolio summary." },
+                            { title: "Technical Credentials", desc: "Track record in renewable EPC/O&M." }
+                        ],
+                        eligibility: "Qualified developers, EPCs, and institutional partners."
+                    },
+                    fees: {
+                        structure: [],
+                        note: "No fixed fees; commercial terms are defined per project engagement."
+                    },
+                    faqs: [
+                        { q: "How long does it take to activate a solar/wind project?", a: "Timelines vary by scope and permitting; typical activation ranges from months to phased commissioning schedules." },
+                        { q: "What are the requirements for partnering in renewable projects?", a: "A company profile and technical credentials demonstrating EPC/O&M capabilities are required." }
+                    ],
+                    resources: [
+                        { label: "Renewables Prospectus (PDF)", href: "#" },
+                        { label: "Partner Directory", href: "#" }
+                    ],
+                    heroImage: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
             },
             {
-                id: "quick-pay",
-                name: "Quick Pay",
-                desc: "Pay your utility bills securely and instantly using various payment methods.",
-                category: "Consumer Ecosystem",
-                subCategory: "BILLING",
-                icon: CreditCard,
+                id: "smart-grid-platforms",
+                name: "Smart Grid & Digital Energy Platforms",
+                desc: "Access cognitive grid tools, real-time load management, and AI-driven energy dashboards.",
+                category: "Builder Ecosystem",
+                subCategory: "GRID MGMT",
+                icon: Zap,
                 status: "Available",
                 popularity: 4.8,
                 color: "bg-blue-600",
-                isPopular: true
+                isPopular: true,
+                details: {
+                    overview: "NEOM’s smart grid systems enable AI-powered optimization of energy distribution, ensuring a seamless, future-proof power network.",
+                    features: [
+                        "Real-time SCADA overlays",
+                        "AI-driven demand forecasting",
+                        "Automated dispatch optimization"
+                    ],
+                    howItWorks: [
+                        "Authenticate your assets",
+                        "Configure telemetry",
+                        "Access real-time energy intelligence through our digital platforms"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Access Agreement", desc: "Platform access and data policy acceptance." }
+                        ],
+                        eligibility: "Utilities, large consumers, and approved OEM partners."
+                    },
+                    fees: { structure: [], note: "No fixed fees; tiered licensing may apply for premium modules and integrations." },
+                    faqs: [
+                        { q: "How do I configure my assets?", a: "After access approval, register assets, enable telemetry, and map signals in the platform console or via API." },
+                        { q: "What are the prerequisites for operating in the NEOM smart grid?", a: "An executed access agreement, compliant telemetry, and approved roles/permissions are required." }
+                    ],
+                    resources: [
+                        { label: "Platform Guide", href: "#" },
+                        { label: "API Reference", href: "#" }
+                    ],
+                    heroImage: "https://images.unsplash.com/photo-1555949963-aa79dcee981d?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
             },
             {
-                id: "sustainable-living",
-                name: "My Sustainable Living",
-                desc: "Monitor your consumption, compare with similar homes, and get tips to save energy and water.",
-                category: "Consumer Ecosystem",
-                subCategory: "SUSTAINABILITY",
-                icon: TrendingDown,
+                id: "energy-storage",
+                name: "Energy Storage",
+                desc: "Discover storage technologies and grid-scale buffering solutions for reliability and resilience.",
+                category: "Builder Ecosystem",
+                subCategory: "STORAGE",
+                icon: Battery,
                 status: "Available",
                 popularity: 4.7,
+                color: "bg-purple-600",
+                isPopular: false,
+                details: {
+                    overview: "Our grid-scale energy storage solutions help NEOM’s sustainable energy infrastructure manage the balance between supply and demand, ensuring a reliable power grid.",
+                    features: [
+                        "Grid-scale BESS",
+                        "Hybrid storage architectures",
+                        "Lifecycle and safety analytics"
+                    ],
+                    howItWorks: [
+                        "Evaluate storage solutions tailored to your use case",
+                        "Access on-demand energy storage",
+                        "Power the city of tomorrow"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Site Parameters", desc: "Interconnection and footprint details." }
+                        ],
+                        eligibility: "Developers and large consumers requiring storage."
+                    },
+                    fees: { structure: [], note: "No fixed fees; capex/opex are defined per deployment scope and use case." },
+                    faqs: [
+                        { q: "What is BESS and how does it contribute to grid stability?", a: "Battery Energy Storage Systems provide frequency response, peak shaving, and backup to stabilize the grid." },
+                        { q: "How is energy storage sized for different use cases?", a: "Sizing depends on duty cycle, response time, and site constraints; our team provides tailored sizing studies." }
+                    ],
+                    resources: [ { label: "Storage Playbook", href: "#" } ],
+                    heroImage: "https://images.unsplash.com/photo-1565715489087-97b3a75fd5f0?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
+            },
+            {
+                id: "green-hydrogen",
+                name: "Green Hydrogen & Fuels",
+                desc: "Hydrogen labs, partnerships, and sustainable fuel services across NEOM's value chain.",
+                category: "Partners & Talent",
+                subCategory: "INNOVATION",
+                icon: Leaf,
+                status: "Available",
+                popularity: 4.8,
                 color: "bg-emerald-400",
-                isPopular: false
+                isPopular: true,
+                details: {
+                    overview: "At the forefront of hydrogen innovation, NEOM develops end-to-end green hydrogen solutions for clean fuel production and logistics.",
+                    features: [
+                        "Electrolyzer pilots and scale-up",
+                        "Safety and certification frameworks",
+                        "Export logistics integration"
+                    ],
+                    howItWorks: [
+                        "Propose a pilot",
+                        "Align on safety standards",
+                        "Work with NEOM to execute world-class hydrogen projects"
+                    ],
+                    requirements: {
+                        documents: [ { title: "HSE Dossier", desc: "Safety and compliance documentation." } ],
+                        eligibility: "Qualified research and industrial partners."
+                    },
+                    fees: { structure: [], note: "No fixed fees; terms are defined within collaboration MoUs or pilot agreements." },
+                    faqs: [
+                        { q: "How is hydrogen production scaled?", a: "Scale-up is achieved via modular electrolyzer capacity, phased infrastructure, and offtake alignment." },
+                        { q: "What safety standards must be met for hydrogen initiatives?", a: "Compliance with international HSE standards and NEOM-specific safety protocols is mandatory." }
+                    ],
+                    resources: [ { label: "Hydrogen Program Overview", href: "#" } ],
+                    heroImage: "https://images.unsplash.com/photo-1566161587928-7fbc2a65e8f5?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
             },
             {
-                id: "view-pay-bills",
-                name: "View/Pay Bills",
-                desc: "Access your billing history, download invoices, and manage your automated payments.",
-                category: "Consumer Ecosystem",
-                subCategory: "BILLING",
-                icon: Droplets,
-                status: "Available",
-                popularity: 4.9,
-                color: "bg-blue-500",
-                isPopular: true
-            },
-            // Builder Ecosystem
-            {
-                id: "noc-building",
-                name: "Building NOC",
-                desc: "Obtain No Objection Certificates for building and construction projects.",
+                id: "energy-infrastructure",
+                name: "Energy Infrastructure",
+                desc: "View transmission maps, substations, and collaborate with infrastructure partners.",
                 category: "Builder Ecosystem",
-                subCategory: "PERMITS",
-                icon: FileCheck,
-                status: "Available",
-                popularity: 4.9,
-                color: "bg-emerald-600",
-                isPopular: true
-            },
-            {
-                id: "infrastructure-conn",
-                name: "Infrastructure Connection",
-                desc: "Request permanent or temporary utility connections for your development site.",
-                category: "Builder Ecosystem",
-                subCategory: "CONNECTIONS",
+                subCategory: "NETWORKS",
                 icon: LayoutGrid,
                 status: "Available",
                 popularity: 4.8,
-                color: "bg-blue-600",
-                isPopular: false
+                color: "bg-blue-500",
+                isPopular: false,
+                details: {
+                    overview: "Our transmission and distribution infrastructure enables a robust and scalable energy network, supporting NEOM’s expansive growth.",
+                    features: [
+                        "Interactive transmission maps",
+                        "Planned substation capacity",
+                        "Outage and maintenance windows"
+                    ],
+                    howItWorks: [
+                        "Explore NEOM’s interactive grid maps",
+                        "Coordinate energy interconnections",
+                        "Build the foundation of the city"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Site Details", desc: "Location, interconnection point, and load/generation profile." },
+                            { title: "Transmission Capacity Agreement", desc: "Preliminary agreement outlining capacity needs and constraints." }
+                        ],
+                        eligibility: "Infrastructure developers and utilities."
+                    },
+                    fees: { structure: [], note: "No fixed fees; terms are defined via interconnection agreements and studies." },
+                    faqs: [
+                        { q: "How do I submit interconnection interest?", a: "Submit a request with site details and capacity needs; our team will guide the next steps." },
+                        { q: "What is the process for coordinating due diligence?", a: "Following interest, we coordinate technical studies, right-of-way reviews, and schedule integration milestones." }
+                    ],
+                    resources: [ { label: "Grid Maps (Preview)", href: "#" } ],
+                    heroImage: "https://images.unsplash.com/photo-1482192505345-5655af888cc4?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
             },
             {
-                id: "design-approval",
-                name: "Design Approval",
-                desc: "Submit utility network designs for technical review and approval.",
-                category: "Builder Ecosystem",
-                subCategory: "ENGINEERING",
-                icon: Ruler,
-                status: "Coming Soon",
-                popularity: 0,
-                color: "bg-zinc-100",
-                isPopular: false
-            },
-            // Partners & Talent
-            {
-                id: "supplier-reg",
-                name: "Supplier Registration",
-                desc: "Register your company as an authorized supplier for NEOM's energy sector.",
+                id: "industrial-commercial",
+                name: "Industrial & Commercial Energy Solutions",
+                desc: "B2B energy offerings for industry and commerce, including decarbonisation services.",
                 category: "Partners & Talent",
-                subCategory: "ONBOARDING",
-                icon: User,
-                status: "Available",
-                popularity: 4.9,
-                color: "bg-purple-600",
-                isPopular: true
-            },
-            {
-                id: "tender-portal",
-                name: "Open Tenders",
-                desc: "View and bid on active procurement opportunities for infrastructure projects.",
-                category: "Partners & Talent",
-                subCategory: "PROCUREMENT",
-                icon: Handshake,
-                status: "Available",
-                popularity: 4.8,
-                color: "bg-orange-500",
-                isPopular: true
-            },
-            {
-                id: "research-collab",
-                name: "Research Collaboration",
-                desc: "Apply for joint research projects in renewable energy and water technology.",
-                category: "Partners & Talent",
-                subCategory: "INNOVATION",
-                icon: GraduationCap,
+                subCategory: "B2B",
+                icon: Factory,
                 status: "Available",
                 popularity: 4.7,
-                color: "bg-blue-400",
-                isPopular: false
+                color: "bg-orange-500",
+                isPopular: true,
+                details: {
+                    overview: "NEOM offers tailored B2B energy solutions that drive decarbonization, renewable integration, and electrification for industries and businesses.",
+                    features: [
+                        "Corporate PPAs and green tariffs",
+                        "Process electrification",
+                        "Decarbonisation roadmaps"
+                    ],
+                    howItWorks: [
+                        "Work with NEOM to select corporate green tariffs",
+                        "Implement smart electrification",
+                        "Deploy decarbonization roadmaps"
+                    ],
+                    requirements: {
+                        documents: [ { title: "Business Energy Target", desc: "Statement of load profile, sustainability goals, and operational constraints." } ],
+                        eligibility: "Large businesses and corporations operating within NEOM."
+                    },
+                    fees: { structure: [], note: "No fixed fees; commercial terms are defined per engagement and bundle selection." },
+                    faqs: [
+                        { q: "What is the process for defining energy targets?", a: "We analyze your load and sustainability KPIs to shape achievable decarbonization milestones." },
+                        { q: "How do I select an optimal energy bundle?", a: "Choose from curated bundles or request a custom mix of PPAs, electrification, and efficiency measures." }
+                    ],
+                    resources: [ { label: "B2B Solutions Guide", href: "#" } ],
+                    heroImage: "https://images.unsplash.com/photo-1581093458791-9d09f27e2566?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
+            },
+            {
+                id: "consumer-community",
+                name: "Consumer & Community Energy Services",
+                desc: "Citizen dashboards, smart metering, and personalized insights for sustainable living.",
+                category: "Consumer Ecosystem",
+                subCategory: "CITIZEN",
+                icon: Home,
+                status: "Available",
+                popularity: 4.9,
+                color: "bg-emerald-600",
+                isPopular: true,
+                details: {
+                    overview: "Our resident portals empower individuals to monitor energy use, track savings, and take actionable steps toward a greener lifestyle.",
+                    features: [
+                        "Smart metering and alerts",
+                        "Personalized savings insights",
+                        "Community benchmarks"
+                    ],
+                    howItWorks: [
+                        "Sign in",
+                        "Connect your meters",
+                        "Track usage, get tips, and make your sustainable living choices"
+                    ],
+                    requirements: { documents: [], eligibility: "Residents and small businesses in NEOM." },
+                    fees: { structure: [], note: "No fixed fees; basic access is free, activation or premium subscriptions may apply for advanced services." },
+                    faqs: [
+                        { q: "How do I connect my smart meter?", a: "Sign in with your NEOM ID, then follow the meter pairing steps in the portal to link your device." },
+                        { q: "How can I track my energy savings?", a: "Use the dashboard to view usage trends, savings insights, and recommendations personalized to your profile." }
+                    ],
+                    resources: [ { label: "Resident Quick Start", href: "#" } ],
+                    heroImage: "https://images.unsplash.com/photo-1581092335294-89ea9b274d9f?q=80&w=1600&auto=format&fit=crop",
+                    actionHref: "#"
+                }
             }
         ]
     },

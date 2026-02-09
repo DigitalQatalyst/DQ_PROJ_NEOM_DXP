@@ -237,7 +237,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Energy", icon: Zap, desc: "Powered by 100% renewable energy for a sustainable future.", active: true, color: "bg-white border-zinc-100 text-neom-black" },
+              { title: "Energy", icon: Zap, desc: "Powered by 100% renewable energy for a sustainable future.", active: true, color: "bg-white border-zinc-100 text-neom-black", href: "/marketplace/energy" },
               { title: "Water", icon: Droplets, desc: "Innovative water desalination and conservation technologies.", active: true, color: "bg-white border-zinc-100 text-neom-black" },
               { title: "Mobility", icon: Truck, desc: "Autonomous and seamless transport solutions across NEOM.", active: true, color: "bg-white border-zinc-100 text-neom-black" },
               { title: "Biotech", icon: ShieldCheck, desc: "Pioneering the future of medicine and genetic research.", active: true, color: "bg-white border-zinc-100 text-neom-black" },
@@ -337,7 +337,7 @@ export default function Home() {
   );
 }
 
-function MarketplaceCard({ title, icon: Icon, desc, active, color }: any) {
+function MarketplaceCard({ title, icon: Icon, desc, active, color, href }: any) {
   return (
     <motion.div
       whileHover={active ? { scale: 1.02, y: -5 } : {}}
@@ -376,7 +376,7 @@ function MarketplaceCard({ title, icon: Icon, desc, active, color }: any) {
 
         {active ? (
           <Link
-            href="/marketplace"
+            href={href || "/marketplace"}
             className="flex items-center justify-center gap-2 rounded-2xl bg-neom-gold px-8 py-4 text-sm font-black text-neom-black transition-all hover:bg-neom-black hover:text-white hover:shadow-xl uppercase tracking-widest"
           >
             Explore <ArrowRight className="h-4 w-4" />
