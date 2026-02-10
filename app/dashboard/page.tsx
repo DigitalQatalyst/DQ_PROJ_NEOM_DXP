@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import {
     LayoutDashboard,
     User,
@@ -102,6 +102,27 @@ const mockPrograms = [
 ];
 
 export default function DashboardPage() {
+    return (
+        <Suspense fallback={<DashboardLoading />}>
+            <DashboardContent />
+        </Suspense>
+    );
+}
+
+function DashboardLoading() {
+    return (
+        <div className="flex h-screen bg-white items-center justify-center">
+            <div className="text-center">
+                <div className="h-16 w-16 bg-neom-gold rounded-3xl flex items-center justify-center mx-auto mb-4 animate-pulse">
+                    <LayoutDashboard className="h-8 w-8 text-neom-black" />
+                </div>
+                <p className="text-sm font-black text-zinc-400 uppercase tracking-widest">Loading Dashboard...</p>
+            </div>
+        </div>
+    );
+}
+
+function DashboardContent() {
     const searchParams = useSearchParams();
     const type = (searchParams.get("type") as "partner" | "customer" | "supplier") || "customer";
     const isOnboarded = searchParams.get("onboarded") === "true";

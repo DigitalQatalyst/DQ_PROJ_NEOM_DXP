@@ -223,7 +223,7 @@ export default function ServiceDetailPage() {
                                         <section className="bg-neom-black rounded-[3rem] p-12 text-white relative overflow-hidden shadow-2xl">
                                             <h2 className="text-3xl font-black mb-12 relative z-10 tracking-tight uppercase">How It Works</h2>
                                             <div className="space-y-8 relative z-10">
-                                                {serviceDetail.content.overview.howItWorks.map((step) => (
+                                                {serviceDetail.content.overview.howItWorks.map((step: { step: number; text: string }) => (
                                                     <div key={step.step} className="flex gap-6 group">
                                                         <div className="h-10 w-10 rounded-full bg-neom-gold flex items-center justify-center font-black text-sm text-neom-black shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                                             {step.step}
@@ -255,7 +255,7 @@ export default function ServiceDetailPage() {
                                         <section>
                                             <h2 className="text-3xl font-black text-neom-black mb-8 tracking-tight uppercase">Neural Verification Requirements</h2>
                                             <div className="space-y-4">
-                                                {serviceDetail.content.requirements.documents.map((doc, i) => (
+                                                {serviceDetail.content.requirements.documents.map((doc: { title: string; desc: string }, i: number) => (
                                                     <div key={i} className="flex items-start gap-6 p-8 bg-zinc-50 rounded-[2rem] border border-zinc-100 hover:border-neom-gold transition-colors">
                                                         <div className="h-12 w-12 rounded-2xl bg-white border border-zinc-100 shadow-sm flex items-center justify-center text-neom-gold shrink-0">
                                                             <FileText className="h-6 w-6" />
@@ -321,7 +321,7 @@ export default function ServiceDetailPage() {
                                 {activeTab === "faqs" && (
                                     <div className="space-y-8">
                                         <h2 className="text-3xl font-black text-neom-black mb-12 tracking-tight uppercase">Cognitive Inquiries</h2>
-                                        {serviceDetail.content.faqs.map((faq, i) => (
+                                        {serviceDetail.content.faqs.map((faq: { q: string; a: string }, i: number) => (
                                             <div key={i} className="p-10 bg-zinc-50 rounded-[2.5rem] border border-zinc-100 hover:border-neom-gold transition-all shadow-sm group">
                                                 <div className="flex gap-6">
                                                     <div className="h-10 w-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center font-black text-zinc-300 shrink-0 group-hover:text-neom-gold group-hover:border-neom-gold transition-colors">?</div>
