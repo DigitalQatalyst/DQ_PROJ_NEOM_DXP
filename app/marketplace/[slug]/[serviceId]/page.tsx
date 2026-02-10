@@ -42,6 +42,23 @@ export default function ServiceDetailPage() {
     // Resolve service from dataset
     const sector = servicesData[(slug as string) || "future-living"] as any;
     const svc = sector?.services?.find((s: any) => s.id === serviceId) as any;
+
+    // If service not found, show 404
+    if (!svc) {
+        return (
+            <div className="bg-white min-h-screen text-neom-black pt-20 flex items-center justify-center">
+                <div className="text-center px-4">
+                    <h1 className="text-6xl font-black text-neom-black mb-4 uppercase">404</h1>
+                    <p className="text-xl text-zinc-500 mb-8">Service not found</p>
+                    <Link href={`/marketplace/${slug}`} className="inline-flex items-center gap-2 px-8 py-4 bg-neom-black text-white rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-neom-gold hover:text-neom-black transition-all">
+                        <ArrowLeft className="h-4 w-4" />
+                        Back to Sector
+                    </Link>
+                </div>
+            </div>
+        );
+    }
+
     const serviceDetail = {
         id: svc?.id || "",
         name: svc?.name || "Service",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
     ChevronRight,
@@ -25,7 +25,7 @@ const types = [
     { id: "supplier", title: "Supplier/Vendor", icon: Truck, desc: "Providing goods and technical services", color: "bg-zinc-100" }
 ];
 
-export default function OnboardingPage() {
+function OnboardingContent() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const typeFromUrl = searchParams.get("type");
@@ -249,5 +249,20 @@ export default function OnboardingPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function OnboardingPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-white flex items-center justify-center">
+                <div className="text-center">
+                    <div className="h-12 w-12 rounded-full border-4 border-neom-gold border-t-transparent animate-spin mx-auto mb-4" />
+                    <p className="text-zinc-400 font-black uppercase tracking-widest text-sm">Loading...</p>
+                </div>
+            </div>
+        }>
+            <OnboardingContent />
+        </Suspense>
     );
 }
