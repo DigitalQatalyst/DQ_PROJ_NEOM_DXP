@@ -15,7 +15,17 @@ import {
     GraduationCap,
     Factory,
     Battery,
-    Home
+    Home,
+    Bot,
+    Lightbulb,
+    Recycle,
+    Boxes,
+    Heart,
+    Cpu,
+    Wrench,
+    Wind,
+    Package,
+    Users
 } from "lucide-react";
 
 export const servicesData: Record<string, {
@@ -539,6 +549,293 @@ export const servicesData: Record<string, {
                 popularity: 0,
                 color: "bg-zinc-100",
                 isPopular: false
+            }
+        ]
+    },
+    "design-construction": {
+        title: "Design & Construction",
+        description: "Building the future with cognitive and sustainable design. NEOM pioneers robotics, clean industry, and worker-centric construction innovation.",
+        categories: ["All", "Automation", "Engineering", "Sustainability", "Supply Chain", "Workforce"],
+        services: [
+            {
+                id: "robotics-automation",
+                name: "Robotics & Automation",
+                desc: "Advanced robotics and automation driving efficiency, safety, and speed in construction.",
+                category: "Automation",
+                subCategory: "ROBOTICS",
+                icon: Bot,
+                status: "Available",
+                popularity: 4.9,
+                color: "bg-blue-600",
+                isPopular: true,
+                details: {
+                    overview: "NEOM is revolutionizing construction through advanced robotics and automation systems that enhance precision, reduce waste, and accelerate project timelines while maintaining the highest safety standards.",
+                    features: [
+                        "Autonomous construction robots",
+                        "AI-powered site monitoring",
+                        "Robotic material handling systems",
+                        "Automated quality control",
+                        "Drone-based site surveying",
+                        "Smart equipment coordination"
+                    ],
+                    howItWorks: [
+                        "Submit your construction project requirements",
+                        "Our team assesses automation opportunities",
+                        "Deploy robotic systems tailored to your needs",
+                        "Monitor progress through real-time dashboards",
+                        "Achieve faster, safer, and more efficient construction"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Project Specifications", desc: "Detailed construction plans and technical requirements." },
+                            { title: "Site Assessment", desc: "Current site conditions and access parameters." },
+                            { title: "Safety Protocols", desc: "Compliance with NEOM construction safety standards." }
+                        ],
+                        eligibility: "Construction firms, developers, and contractors operating within NEOM."
+                    },
+                    fees: {
+                        structure: [
+                            { label: "Initial Assessment", value: "₪ 5,000", type: "One-time" },
+                            { label: "System Deployment", value: "Custom Quote", type: "Project-based" },
+                            { label: "Ongoing Support", value: "₪ 2,000/month", type: "Subscription" }
+                        ],
+                        note: "Pricing varies based on project scope and automation requirements."
+                    },
+                    faqs: [
+                        { q: "What types of construction projects benefit most from robotics?", a: "Large-scale infrastructure, repetitive tasks, high-precision work, and projects requiring enhanced safety measures benefit significantly from robotic automation." },
+                        { q: "How long does it take to deploy robotic systems?", a: "Deployment timelines vary from 2-8 weeks depending on project complexity and site readiness." },
+                        { q: "Can robotics integrate with existing construction workflows?", a: "Yes, our systems are designed to seamlessly integrate with traditional construction methods and existing equipment." }
+                    ],
+                    resources: [
+                        { label: "Robotics Capabilities Guide", href: "#" },
+                        { label: "Case Studies", href: "#" },
+                        { label: "Technical Specifications", href: "#" }
+                    ]
+                }
+            },
+            {
+                id: "engineering-innovation",
+                name: "Engineering Innovation",
+                desc: "AI-driven design and sustainable materials shaping resilient, adaptable cities.",
+                category: "Engineering",
+                subCategory: "INNOVATION",
+                icon: Lightbulb,
+                status: "Available",
+                popularity: 4.8,
+                color: "bg-purple-600",
+                isPopular: true,
+                details: {
+                    overview: "Our engineering innovation hub combines cutting-edge design methodologies, AI-driven simulations, and sustainable materials science to create infrastructure that adapts to future needs.",
+                    features: [
+                        "AI-powered structural design",
+                        "Digital twin technology",
+                        "Sustainable material selection",
+                        "Parametric design tools",
+                        "Climate-responsive architecture",
+                        "Modular construction systems"
+                    ],
+                    howItWorks: [
+                        "Define your engineering challenge",
+                        "Access NEOM's innovation toolkit and expertise",
+                        "Collaborate with our engineering teams",
+                        "Prototype and test solutions",
+                        "Implement validated innovations at scale"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Engineering Brief", desc: "Project objectives and technical constraints." },
+                            { title: "Innovation Proposal", desc: "Description of the engineering challenge or opportunity." },
+                            { title: "Credentials", desc: "Professional engineering qualifications and portfolio." }
+                        ],
+                        eligibility: "Licensed engineers, architects, and design firms partnering with NEOM."
+                    },
+                    fees: {
+                        structure: [
+                            { label: "Consultation", value: "₪ 3,000", type: "One-time" },
+                            { label: "Innovation Lab Access", value: "₪ 8,000/month", type: "Subscription" },
+                            { label: "Prototype Development", value: "Custom Quote", type: "Project-based" }
+                        ],
+                        note: "Grant funding available for breakthrough innovations aligned with NEOM's vision."
+                    },
+                    faqs: [
+                        { q: "What engineering disciplines are supported?", a: "We support structural, civil, mechanical, electrical, and environmental engineering, plus interdisciplinary innovations." },
+                        { q: "Can I access NEOM's engineering simulation tools?", a: "Yes, approved partners gain access to our advanced simulation and modeling platforms." },
+                        { q: "How does NEOM protect intellectual property?", a: "We have robust IP frameworks that protect innovator rights while enabling collaborative development." }
+                    ],
+                    resources: [
+                        { label: "Innovation Framework", href: "#" },
+                        { label: "Engineering Standards", href: "#" },
+                        { label: "Partner Portal", href: "#" }
+                    ]
+                }
+            },
+            {
+                id: "clean-industry",
+                name: "Clean Industry",
+                desc: "Clean technologies reducing carbon footprints and promoting sustainable materials.",
+                category: "Sustainability",
+                subCategory: "CLEAN TECH",
+                icon: Wind,
+                status: "Available",
+                popularity: 4.9,
+                color: "bg-emerald-600",
+                isPopular: true,
+                details: {
+                    overview: "NEOM's clean industry initiative sets new benchmarks for sustainable construction, eliminating harmful emissions and waste while delivering superior performance and durability.",
+                    features: [
+                        "Zero-emission construction equipment",
+                        "Carbon-neutral material production",
+                        "Circular economy practices",
+                        "Waste-to-resource conversion",
+                        "Green certification programs",
+                        "Environmental impact monitoring"
+                    ],
+                    howItWorks: [
+                        "Assess your current environmental footprint",
+                        "Identify clean technology opportunities",
+                        "Implement sustainable practices and materials",
+                        "Track and verify carbon reduction",
+                        "Achieve NEOM clean industry certification"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Environmental Baseline", desc: "Current emissions and waste metrics." },
+                            { title: "Sustainability Plan", desc: "Proposed clean technology implementations." },
+                            { title: "Compliance Certificate", desc: "Adherence to NEOM environmental standards." }
+                        ],
+                        eligibility: "Construction companies, material suppliers, and industrial partners committed to sustainability."
+                    },
+                    fees: {
+                        structure: [
+                            { label: "Environmental Assessment", value: "₪ 4,000", type: "One-time" },
+                            { label: "Clean Tech Implementation", value: "Custom Quote", type: "Project-based" },
+                            { label: "Certification Program", value: "₪ 6,000", type: "Annual" }
+                        ],
+                        note: "Incentives and subsidies available for early adopters of clean technologies."
+                    },
+                    faqs: [
+                        { q: "What qualifies as 'clean industry' in construction?", a: "Clean industry encompasses zero-emission equipment, sustainable materials, waste elimination, and carbon-neutral operations." },
+                        { q: "How does NEOM verify environmental claims?", a: "We use IoT sensors, third-party audits, and blockchain-verified tracking to ensure transparency and accountability." },
+                        { q: "Are there financial benefits to clean industry adoption?", a: "Yes, including tax incentives, preferential contract terms, and access to green financing options." }
+                    ],
+                    resources: [
+                        { label: "Clean Industry Playbook", href: "#" },
+                        { label: "Sustainability Metrics", href: "#" },
+                        { label: "Technology Catalog", href: "#" }
+                    ]
+                }
+            },
+            {
+                id: "cementitious-supply-chain",
+                name: "Cementitious Supply Chain",
+                desc: "Low-carbon cement with alternative materials and recycled aggregates.",
+                category: "Supply Chain",
+                subCategory: "MATERIALS",
+                icon: Package,
+                status: "Available",
+                popularity: 4.7,
+                color: "bg-orange-600",
+                isPopular: false,
+                details: {
+                    overview: "Our innovative cementitious supply chain transforms traditional cement production through low-carbon alternatives, recycled materials, and optimized logistics to deliver sustainable building materials at scale.",
+                    features: [
+                        "Low-carbon cement alternatives",
+                        "Recycled aggregate integration",
+                        "Carbon capture in production",
+                        "Blockchain supply chain tracking",
+                        "Quality-assured sustainable materials",
+                        "Just-in-time delivery systems"
+                    ],
+                    howItWorks: [
+                        "Specify your material requirements",
+                        "Select from sustainable cement options",
+                        "Place orders through our digital platform",
+                        "Track delivery and quality certifications",
+                        "Receive materials with full carbon accounting"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Material Specifications", desc: "Technical requirements and performance standards." },
+                            { title: "Project Timeline", desc: "Delivery schedule and volume requirements." },
+                            { title: "Quality Standards", desc: "Acceptance criteria and testing protocols." }
+                        ],
+                        eligibility: "Construction projects within NEOM requiring cementitious materials."
+                    },
+                    fees: {
+                        structure: [
+                            { label: "Standard Low-Carbon Cement", value: "₪ 450/ton", type: "Per Unit" },
+                            { label: "Premium Recycled Blend", value: "₪ 520/ton", type: "Per Unit" },
+                            { label: "Delivery & Logistics", value: "₪ 80/ton", type: "Per Unit" }
+                        ],
+                        note: "Volume discounts available for large projects. Prices include carbon offset credits."
+                    },
+                    faqs: [
+                        { q: "How much carbon is reduced compared to traditional cement?", a: "Our low-carbon alternatives reduce emissions by 40-70% compared to conventional Portland cement." },
+                        { q: "Does sustainable cement compromise structural performance?", a: "No, all materials meet or exceed international structural standards and are rigorously tested." },
+                        { q: "Can I track the origin of materials?", a: "Yes, our blockchain-enabled system provides full traceability from production to delivery." }
+                    ],
+                    resources: [
+                        { label: "Material Catalog", href: "#" },
+                        { label: "Technical Data Sheets", href: "#" },
+                        { label: "Supply Chain Dashboard", href: "#" }
+                    ]
+                }
+            },
+            {
+                id: "worker-welfare",
+                name: "Worker Welfare",
+                desc: "Smart monitoring and robotics ensuring worker health, safety, and well-being.",
+                category: "Workforce",
+                subCategory: "SAFETY & WELLNESS",
+                icon: Users,
+                status: "Available",
+                popularity: 4.8,
+                color: "bg-rose-600",
+                isPopular: true,
+                details: {
+                    overview: "NEOM's worker welfare program leverages technology and human-centered design to create the safest, healthiest, and most supportive construction work environment in the world.",
+                    features: [
+                        "Wearable health monitoring",
+                        "AI-powered safety alerts",
+                        "Ergonomic tool design",
+                        "Mental health support programs",
+                        "Skills development training",
+                        "Worker feedback systems"
+                    ],
+                    howItWorks: [
+                        "Enroll your workforce in the welfare program",
+                        "Deploy wearable safety devices",
+                        "Access training and wellness resources",
+                        "Monitor safety metrics in real-time",
+                        "Continuously improve worker conditions"
+                    ],
+                    requirements: {
+                        documents: [
+                            { title: "Workforce Registry", desc: "List of workers and their roles." },
+                            { title: "Safety Compliance", desc: "Current safety protocols and incident history." },
+                            { title: "Training Records", desc: "Worker qualifications and certifications." }
+                        ],
+                        eligibility: "All construction employers and contractors operating within NEOM."
+                    },
+                    fees: {
+                        structure: [
+                            { label: "Program Enrollment", value: "₪ 2,000", type: "One-time" },
+                            { label: "Per Worker Monthly", value: "₪ 150/worker", type: "Subscription" },
+                            { label: "Training Modules", value: "₪ 500/course", type: "Per Course" }
+                        ],
+                        note: "Subsidies available for small contractors. Mandatory for all NEOM construction projects."
+                    },
+                    faqs: [
+                        { q: "What health metrics are monitored?", a: "We track vital signs, fatigue levels, environmental exposure, and ergonomic stress while respecting worker privacy." },
+                        { q: "How does NEOM respond to safety alerts?", a: "Automated alerts trigger immediate supervisor notification and, if needed, emergency response protocols." },
+                        { q: "Are workers involved in program design?", a: "Yes, we maintain active worker councils that provide input on welfare initiatives and safety improvements." }
+                    ],
+                    resources: [
+                        { label: "Worker Welfare Handbook", href: "#" },
+                        { label: "Safety Training Portal", href: "#" },
+                        { label: "Wellness Resources", href: "#" }
+                    ]
+                }
             }
         ]
     }
