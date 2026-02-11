@@ -5,8 +5,8 @@ import { Building2, ShieldCheck, Handshake, Landmark } from "lucide-react";
 
 export default function InvestLandingPage() {
   return (
-    <div className="bg-black text-white min-h-screen">
-      <section className="relative overflow-hidden bg-black">
+    <div className="bg-white text-black min-h-screen">
+      <section className="relative overflow-hidden bg-white">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?auto=format&fit=crop&q=80&w=2000"
@@ -15,7 +15,7 @@ export default function InvestLandingPage() {
             className="object-cover brightness-50"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-white/70" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
@@ -25,11 +25,11 @@ export default function InvestLandingPage() {
             </div>
 
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight uppercase">
-              <span className="block text-zinc-100">The Future of</span>
+              <span className="block text-zinc-900">The Future of</span>
               <span className="mt-2 block text-neom-gold">Investment</span>
             </h1>
 
-            <p className="text-lg sm:text-xl text-zinc-300 max-w-xl font-medium">
+            <p className="text-lg sm:text-xl text-zinc-700 max-w-xl font-medium">
               Discover groundbreaking investment opportunities that shape tomorrow. Be the first to access exclusive projects and visionary developments across NEOM.
             </p>
 
@@ -37,9 +37,9 @@ export default function InvestLandingPage() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full max-w-md rounded-2xl border border-white/10 bg-black/40 px-6 py-4 text-sm font-medium text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-neom-gold/70"
+                className="w-full max-w-md rounded-2xl border border-zinc-200 bg-zinc-50 px-6 py-4 text-sm font-medium text-black placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-neom-gold/70"
               />
-              <button className="inline-flex items-center justify-center rounded-2xl bg-neom-gold px-10 py-4 text-sm font-black uppercase tracking-[0.2em] text-neom-black transition-all hover:bg-white hover:shadow-2xl">
+              <button className="inline-flex items-center justify-center rounded-2xl bg-neom-gold px-10 py-4 text-sm font-black uppercase tracking-[0.2em] text-neom-black transition-all hover:bg-zinc-100 hover:shadow-2xl">
                 Get Notified
               </button>
             </div>

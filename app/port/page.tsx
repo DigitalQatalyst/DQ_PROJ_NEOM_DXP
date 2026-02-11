@@ -104,7 +104,7 @@ export default function PortOfNeom() {
   ];
 
   return (
-    <div className="bg-black text-white min-h-screen">
+    <div className="bg-white text-black min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         <motion.div 
@@ -118,8 +118,8 @@ export default function PortOfNeom() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-white/70 to-white" />
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-transparent to-white/60" />
         </motion.div>
 
         <motion.div 
@@ -156,7 +156,7 @@ export default function PortOfNeom() {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
-                className="text-xl sm:text-2xl text-zinc-300 mb-12 max-w-3xl leading-relaxed"
+                className="text-xl sm:text-2xl text-zinc-700 mb-12 max-w-3xl leading-relaxed"
               >
                 Welcome to the Port of NEOM – the world's most advanced, sustainable, and automated maritime gateway. 
                 Where AI meets ocean to redefine global commerce.
@@ -196,7 +196,7 @@ export default function PortOfNeom() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 border-y border-zinc-800">
+      <section className="py-24 border-y border-zinc-200">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
@@ -220,10 +220,10 @@ export default function PortOfNeom() {
                 <div className="text-4xl sm:text-5xl font-black tracking-tighter text-neom-gold">
                   {stat.value}
                 </div>
-                <div className="text-lg font-black text-zinc-400 uppercase tracking-widest mb-2">
+                <div className="text-lg font-black text-zinc-600 uppercase tracking-widest mb-2">
                   {stat.unit}
                 </div>
-                <div className="text-sm text-zinc-500 font-medium">
+                <div className="text-sm text-zinc-600 font-medium">
                   {stat.label}
                 </div>
               </motion.div>
@@ -233,7 +233,7 @@ export default function PortOfNeom() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 bg-zinc-950">
+      <section id="features" className="py-24 bg-zinc-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ export default function PortOfNeom() {
                 key={i}
                 variants={fadeIn}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="group relative p-8 rounded-[2.5rem] border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-neom-gold/50 hover:bg-zinc-900/80"
+                className="group relative p-8 rounded-[2.5rem] border border-zinc-200 bg-white/50 backdrop-blur-sm transition-all hover:border-neom-gold/50 hover:bg-zinc-100"
               >
                 <div className={cn(
                   "mb-6 flex h-16 w-16 items-center justify-center rounded-2xl border transition-all group-hover:scale-110",
@@ -272,10 +272,10 @@ export default function PortOfNeom() {
                 )}>
                   <feature.icon className="h-8 w-8" />
                 </div>
-                <h3 className="text-xl font-black text-white uppercase tracking-widest mb-4 group-hover:text-neom-gold transition-colors">
+                <h3 className="text-xl font-black text-zinc-900 uppercase tracking-widest mb-4 group-hover:text-neom-gold transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-zinc-400 leading-relaxed">
+                <p className="text-zinc-600 leading-relaxed">
                   {feature.desc}
                 </p>
               </motion.div>
@@ -314,13 +314,13 @@ export default function PortOfNeom() {
                 transition={{ delay: i * 0.2 }}
                 className="group"
               >
-                <div className="p-8 rounded-[2.5rem] border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all hover:border-neom-gold/50 hover:bg-zinc-900/80">
+                <div className="p-8 rounded-[2.5rem] border border-zinc-200 bg-white/50 backdrop-blur-sm transition-all hover:border-neom-gold/50 hover:bg-zinc-100">
                   <div className="flex items-start justify-between mb-6">
                     <div>
-                      <h3 className="text-2xl font-black text-white uppercase tracking-widest mb-2 group-hover:text-neom-gold transition-colors">
+                      <h3 className="text-2xl font-black text-zinc-900 uppercase tracking-widest mb-2 group-hover:text-neom-gold transition-colors">
                         {service.title}
                       </h3>
-                      <p className="text-zinc-400 leading-relaxed mb-4">
+                      <p className="text-zinc-600 leading-relaxed mb-4">
                         {service.desc}
                       </p>
                       <div className="flex items-center gap-4 text-neom-gold font-black text-sm uppercase tracking-widest">
@@ -337,7 +337,7 @@ export default function PortOfNeom() {
                     {service.tech.map((tech, techIndex) => (
                       <div key={techIndex} className="flex items-center gap-3">
                         <div className="h-2 w-2 rounded-full bg-neom-gold" />
-                        <span className="text-sm text-zinc-300 font-medium">{tech}</span>
+                        <span className="text-sm text-zinc-600 font-medium">{tech}</span>
                       </div>
                     ))}
                   </div>
@@ -362,7 +362,7 @@ export default function PortOfNeom() {
                 Future of Maritime Trade?
               </span>
             </h2>
-            <p className="text-xl text-zinc-300 mb-12 leading-relaxed">
+            <p className="text-xl text-zinc-700 mb-12 leading-relaxed">
               Join us in building the world's most advanced port infrastructure. 
               Partner with NEOM to redefine global commerce.
             </p>
